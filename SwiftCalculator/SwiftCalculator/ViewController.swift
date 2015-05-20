@@ -32,6 +32,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func setUpViews() {
         
+        
+        
         topTextField = UITextField.new()
         topTextField.frame = CGRectMake(50, 100, self.view.frame.size.width - 100, 60)
         topTextField.backgroundColor = UIColor.whiteColor()
@@ -44,6 +46,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         addButton = UIButton.new()
         addButton.frame = CGRectMake(50, 185, 50, 50)
+        var cornerRadius: CGFloat = addButton.frame.size.height / 2
+        addButton.layer.cornerRadius = cornerRadius;
         addButton.setTitle("+", forState: UIControlState.Normal)
         addButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         addButton.backgroundColor = UIColor.blueColor()
@@ -52,6 +56,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         subtractButton = UIButton.new()
         subtractButton.frame = CGRectMake(125, 185, 50, 50)
+        subtractButton.layer.cornerRadius = cornerRadius
         subtractButton.setTitle("-", forState: UIControlState.Normal)
         subtractButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         subtractButton.backgroundColor = UIColor.blueColor()
@@ -60,6 +65,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         divideButton = UIButton.new()
         divideButton.frame = CGRectMake(200, 185, 50, 50)
+        divideButton.layer.cornerRadius = cornerRadius
         divideButton.setTitle("/", forState: UIControlState.Normal)
         divideButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         divideButton.backgroundColor = UIColor.blueColor()
@@ -68,6 +74,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         multiplyButton = UIButton.new()
         multiplyButton.frame = CGRectMake(275, 185, 50, 50)
+        multiplyButton.layer.cornerRadius = cornerRadius
         multiplyButton.setTitle("x", forState: UIControlState.Normal)
         multiplyButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         multiplyButton.backgroundColor = UIColor.blueColor()
@@ -86,7 +93,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         totalLabel = UILabel.new()
         totalLabel.frame = CGRectMake(50, 350, 150, 50)
-        totalLabel.backgroundColor = UIColor.lightGrayColor()
+        totalLabel.backgroundColor = UIColor.whiteColor()
         totalLabel.textColor = UIColor.blackColor()
         totalLabel.textAlignment = NSTextAlignment.Center
         totalLabel.font = UIFont(name: "Chalkduster", size: 16)
@@ -94,6 +101,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         clearButton = UIButton.new()
         clearButton.frame = CGRectMake(225, 350, 100, 50)
+        clearButton.layer.cornerRadius = cornerRadius
         clearButton.setTitle(" Clear ", forState: UIControlState.Normal)
         clearButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         clearButton.backgroundColor = UIColor.redColor()
@@ -235,6 +243,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         return true
     }
+    
+    
+//    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+//        
+//        var PositiveINT = NSArray("1","2","3","4","5","6","7","8","9")
+//        
+//        
+//        
+//        return true
+//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
